@@ -1,0 +1,932 @@
+[
+  {
+    "name": "all-purpose flour",
+    "count": 17,
+    "staple": true
+  },
+  {
+    "name": "almonds",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "apple",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "apple cider vinegar",
+    "count": 3,
+    "staple": false
+  },
+  {
+    "name": "arborio rice",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "avocado",
+    "count": 4,
+    "staple": false
+  },
+  {
+    "name": "bacon",
+    "count": 5,
+    "staple": false
+  },
+  {
+    "name": "baguette",
+    "count": 3,
+    "staple": false
+  },
+  {
+    "name": "baked beans",
+    "count": 2,
+    "staple": false
+  },
+  {
+    "name": "baking powder",
+    "count": 5,
+    "staple": false
+  },
+  {
+    "name": "baking soda",
+    "count": 2,
+    "staple": false
+  },
+  {
+    "name": "banana",
+    "count": 4,
+    "staple": false
+  },
+  {
+    "name": "basil",
+    "count": 8,
+    "staple": false
+  },
+  {
+    "name": "basmati rice",
+    "count": 5,
+    "staple": false
+  },
+  {
+    "name": "bay leaf",
+    "count": 2,
+    "staple": false
+  },
+  {
+    "name": "bean sprouts",
+    "count": 2,
+    "staple": false
+  },
+  {
+    "name": "beef",
+    "count": 4,
+    "staple": false
+  },
+  {
+    "name": "beef broth",
+    "count": 7,
+    "staple": false
+  },
+  {
+    "name": "beer",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "bell pepper",
+    "count": 20,
+    "staple": false
+  },
+  {
+    "name": "berbere spice",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "berries",
+    "count": 2,
+    "staple": false
+  },
+  {
+    "name": "black beans",
+    "count": 5,
+    "staple": false
+  },
+  {
+    "name": "black pepper",
+    "count": 17,
+    "staple": true
+  },
+  {
+    "name": "blue cheese",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "bread",
+    "count": 12,
+    "staple": false
+  },
+  {
+    "name": "breadcrumbs",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "broccoli",
+    "count": 3,
+    "staple": false
+  },
+  {
+    "name": "brown lentils",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "brown sugar",
+    "count": 2,
+    "staple": false
+  },
+  {
+    "name": "bulgur",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "burger buns",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "butter",
+    "count": 32,
+    "staple": true
+  },
+  {
+    "name": "cabbage",
+    "count": 4,
+    "staple": false
+  },
+  {
+    "name": "canned tomatoes",
+    "count": 27,
+    "staple": false
+  },
+  {
+    "name": "cannellini beans",
+    "count": 2,
+    "staple": false
+  },
+  {
+    "name": "cardamom",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "carrot",
+    "count": 19,
+    "staple": false
+  },
+  {
+    "name": "cauliflower",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "celery",
+    "count": 6,
+    "staple": false
+  },
+  {
+    "name": "cheddar",
+    "count": 10,
+    "staple": false
+  },
+  {
+    "name": "cherry tomatoes",
+    "count": 4,
+    "staple": false
+  },
+  {
+    "name": "chicken",
+    "count": 16,
+    "staple": false
+  },
+  {
+    "name": "chicken broth",
+    "count": 2,
+    "staple": false
+  },
+  {
+    "name": "chicken wings",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "chickpea flour",
+    "count": 3,
+    "staple": false
+  },
+  {
+    "name": "chickpeas",
+    "count": 9,
+    "staple": false
+  },
+  {
+    "name": "chili",
+    "count": 2,
+    "staple": false
+  },
+  {
+    "name": "chili bean paste",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "chili flakes",
+    "count": 10,
+    "staple": false
+  },
+  {
+    "name": "chili powder",
+    "count": 11,
+    "staple": false
+  },
+  {
+    "name": "chocolate chips",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "cilantro",
+    "count": 23,
+    "staple": false
+  },
+  {
+    "name": "cinnamon",
+    "count": 7,
+    "staple": false
+  },
+  {
+    "name": "clams",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "cocoa powder",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "coconut milk",
+    "count": 4,
+    "staple": false
+  },
+  {
+    "name": "cod",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "corn",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "corn tortilla",
+    "count": 2,
+    "staple": false
+  },
+  {
+    "name": "cornmeal",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "cornstarch",
+    "count": 6,
+    "staple": false
+  },
+  {
+    "name": "cottage cheese",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "couscous",
+    "count": 2,
+    "staple": false
+  },
+  {
+    "name": "cucumber",
+    "count": 8,
+    "staple": false
+  },
+  {
+    "name": "cumin seeds",
+    "count": 6,
+    "staple": false
+  },
+  {
+    "name": "curry powder",
+    "count": 4,
+    "staple": false
+  },
+  {
+    "name": "dashi",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "dijon mustard",
+    "count": 2,
+    "staple": false
+  },
+  {
+    "name": "dill",
+    "count": 3,
+    "staple": false
+  },
+  {
+    "name": "dried apricots",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "egg noodles",
+    "count": 2,
+    "staple": false
+  },
+  {
+    "name": "eggplant",
+    "count": 4,
+    "staple": false
+  },
+  {
+    "name": "eggs",
+    "count": 30,
+    "staple": false
+  },
+  {
+    "name": "feta",
+    "count": 4,
+    "staple": false
+  },
+  {
+    "name": "fish sauce",
+    "count": 4,
+    "staple": false
+  },
+  {
+    "name": "fusilli pasta",
+    "count": 2,
+    "staple": false
+  },
+  {
+    "name": "garam masala",
+    "count": 9,
+    "staple": false
+  },
+  {
+    "name": "garlic",
+    "count": 79,
+    "staple": true
+  },
+  {
+    "name": "ghee",
+    "count": 3,
+    "staple": false
+  },
+  {
+    "name": "ginger",
+    "count": 27,
+    "staple": false
+  },
+  {
+    "name": "gochujang",
+    "count": 2,
+    "staple": false
+  },
+  {
+    "name": "green beans",
+    "count": 3,
+    "staple": false
+  },
+  {
+    "name": "green chili",
+    "count": 5,
+    "staple": false
+  },
+  {
+    "name": "green curry paste",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "green lentils",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "green onion",
+    "count": 20,
+    "staple": false
+  },
+  {
+    "name": "ground beef",
+    "count": 5,
+    "staple": false
+  },
+  {
+    "name": "ground coriander",
+    "count": 8,
+    "staple": false
+  },
+  {
+    "name": "ground cumin",
+    "count": 24,
+    "staple": false
+  },
+  {
+    "name": "ground lamb",
+    "count": 2,
+    "staple": false
+  },
+  {
+    "name": "ground pork",
+    "count": 2,
+    "staple": false
+  },
+  {
+    "name": "gruyere",
+    "count": 2,
+    "staple": false
+  },
+  {
+    "name": "ham",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "heavy cream",
+    "count": 6,
+    "staple": false
+  },
+  {
+    "name": "honey",
+    "count": 3,
+    "staple": false
+  },
+  {
+    "name": "hot sauce",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "hummus",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "kecap manis",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "kimchi",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "leek",
+    "count": 2,
+    "staple": false
+  },
+  {
+    "name": "lemon",
+    "count": 17,
+    "staple": false
+  },
+  {
+    "name": "lemongrass",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "lettuce",
+    "count": 4,
+    "staple": false
+  },
+  {
+    "name": "lime",
+    "count": 11,
+    "staple": false
+  },
+  {
+    "name": "long-grain white rice",
+    "count": 11,
+    "staple": false
+  },
+  {
+    "name": "macaroni",
+    "count": 4,
+    "staple": false
+  },
+  {
+    "name": "mayonnaise",
+    "count": 6,
+    "staple": false
+  },
+  {
+    "name": "milk",
+    "count": 19,
+    "staple": false
+  },
+  {
+    "name": "mint",
+    "count": 3,
+    "staple": false
+  },
+  {
+    "name": "mirin",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "miso paste",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "mozzarella",
+    "count": 4,
+    "staple": false
+  },
+  {
+    "name": "mushrooms",
+    "count": 6,
+    "staple": false
+  },
+  {
+    "name": "mustard",
+    "count": 6,
+    "staple": false
+  },
+  {
+    "name": "nutmeg",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "oats",
+    "count": 4,
+    "staple": false
+  },
+  {
+    "name": "olive oil",
+    "count": 44,
+    "staple": true
+  },
+  {
+    "name": "olives",
+    "count": 2,
+    "staple": false
+  },
+  {
+    "name": "onion",
+    "count": 64,
+    "staple": true
+  },
+  {
+    "name": "orange",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "oregano",
+    "count": 4,
+    "staple": false
+  },
+  {
+    "name": "oyster sauce",
+    "count": 2,
+    "staple": false
+  },
+  {
+    "name": "pancetta",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "paneer",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "paprika",
+    "count": 15,
+    "staple": false
+  },
+  {
+    "name": "parmesan",
+    "count": 7,
+    "staple": false
+  },
+  {
+    "name": "parsley",
+    "count": 14,
+    "staple": false
+  },
+  {
+    "name": "peanut butter",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "peanuts",
+    "count": 2,
+    "staple": false
+  },
+  {
+    "name": "peas",
+    "count": 4,
+    "staple": false
+  },
+  {
+    "name": "penne pasta",
+    "count": 2,
+    "staple": false
+  },
+  {
+    "name": "pine nuts",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "pineapple",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "pita",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "pizza dough",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "plain yogurt",
+    "count": 8,
+    "staple": false
+  },
+  {
+    "name": "pork",
+    "count": 2,
+    "staple": false
+  },
+  {
+    "name": "potato",
+    "count": 23,
+    "staple": false
+  },
+  {
+    "name": "quinoa",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "raisins",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "red kidney beans",
+    "count": 2,
+    "staple": false
+  },
+  {
+    "name": "red lentils",
+    "count": 3,
+    "staple": false
+  },
+  {
+    "name": "red onion",
+    "count": 6,
+    "staple": false
+  },
+  {
+    "name": "red wine vinegar",
+    "count": 4,
+    "staple": false
+  },
+  {
+    "name": "rice noodles",
+    "count": 4,
+    "staple": false
+  },
+  {
+    "name": "rice vinegar",
+    "count": 2,
+    "staple": false
+  },
+  {
+    "name": "rosemary",
+    "count": 2,
+    "staple": false
+  },
+  {
+    "name": "salmon",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "salt",
+    "count": 114,
+    "staple": true
+  },
+  {
+    "name": "sausage",
+    "count": 3,
+    "staple": false
+  },
+  {
+    "name": "seaweed",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "sesame oil",
+    "count": 3,
+    "staple": false
+  },
+  {
+    "name": "shredded coconut",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "shrimp",
+    "count": 4,
+    "staple": false
+  },
+  {
+    "name": "snow peas",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "sour cream",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "soy sauce",
+    "count": 15,
+    "staple": false
+  },
+  {
+    "name": "spaghetti",
+    "count": 4,
+    "staple": false
+  },
+  {
+    "name": "spinach",
+    "count": 9,
+    "staple": false
+  },
+  {
+    "name": "split mung beans",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "split pigeon peas",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "star anise",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "sugar",
+    "count": 19,
+    "staple": true
+  },
+  {
+    "name": "sweet potato",
+    "count": 2,
+    "staple": false
+  },
+  {
+    "name": "tahini",
+    "count": 4,
+    "staple": false
+  },
+  {
+    "name": "tamarind paste",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "thyme",
+    "count": 4,
+    "staple": false
+  },
+  {
+    "name": "tilapia",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "tofu",
+    "count": 3,
+    "staple": false
+  },
+  {
+    "name": "tomato",
+    "count": 12,
+    "staple": false
+  },
+  {
+    "name": "tomato passata",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "tomato paste",
+    "count": 8,
+    "staple": false
+  },
+  {
+    "name": "tomatoes",
+    "count": 8,
+    "staple": false
+  },
+  {
+    "name": "tortilla",
+    "count": 7,
+    "staple": false
+  },
+  {
+    "name": "tortilla chips",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "tuna",
+    "count": 2,
+    "staple": false
+  },
+  {
+    "name": "turmeric",
+    "count": 12,
+    "staple": false
+  },
+  {
+    "name": "vanilla extract",
+    "count": 2,
+    "staple": false
+  },
+  {
+    "name": "vegetable broth",
+    "count": 10,
+    "staple": false
+  },
+  {
+    "name": "vegetable oil",
+    "count": 57,
+    "staple": true
+  },
+  {
+    "name": "vinegar",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "water",
+    "count": 10,
+    "staple": true
+  },
+  {
+    "name": "wonton wrapper",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "worcestershire sauce",
+    "count": 1,
+    "staple": false
+  },
+  {
+    "name": "zucchini",
+    "count": 7,
+    "staple": false
+  }
+]

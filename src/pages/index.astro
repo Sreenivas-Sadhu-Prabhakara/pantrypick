@@ -1,0 +1,232 @@
+---
+import Base from '../layouts/Base.astro';
+
+const title = 'pantrypick — what can I cook with the ingredients I have?';
+const description =
+  'Tell pantrypick what is in your kitchen and it shows the everyday recipes you can actually cook right now, ranked by how much you already have. Private, offline, no login. A hand-picked library of about 150 real recipes.';
+
+// FAQPage structured data — mirrors the visible FAQ below.
+const faqs = [
+  {
+    q: 'How do I find recipes with ingredients I already have?',
+    a: 'Type the ingredients in your kitchen into the pantry box on the left. pantrypick matches them against a library of about 150 everyday recipes and ranks the results by how much you already have — recipes you can cook right now appear first, then recipes missing one ingredient, then two, and so on. Each recipe shows exactly which ingredients you are still missing.',
+  },
+  {
+    q: 'Does this work offline?',
+    a: 'Yes. Everything runs in your browser. The recipe library is bundled into the page, all matching happens on your device, and nothing is ever sent to a server. Once the page has loaded you can turn off your connection and it keeps working. Your pantry is saved locally in your browser, not in any account.',
+  },
+  {
+    q: 'Does pantrypick invent new recipes with AI?',
+    a: 'No. This is a deliberately hand-picked library of about 150 real, everyday recipes with tested-feeling quantities and steps. It does not generate recipes on the fly. That is the point: the results are honest, repeatable, and work with no connection.',
+  },
+  {
+    q: 'What are staples and why are they assumed?',
+    a: 'Staples are the everyday basics most kitchens always have — salt, pepper, water, oil, sugar, flour, butter, garlic and onion. pantrypick assumes you have them so you do not have to type them every time. If you are actually out of one, untick it in the Staples list and recipes that need it will count it as missing.',
+  },
+  {
+    q: 'It knows scallion is green onion?',
+    a: 'Yes. pantrypick normalises common ingredient names across regions, so scallion and green onion, coriander and cilantro, aubergine and eggplant, capsicum and bell pepper, courgette and zucchini, and many more all match the same thing.',
+  },
+  {
+    q: 'Can I trust the vegetarian, vegan or gluten-free tags?',
+    a: 'Treat them as a helpful best-effort starting point, not a guarantee. The tags are applied by hand and checked against each ingredient list, but products vary and cross-contamination happens. Always read the ingredients yourself if you cook for allergies or a strict diet.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
+const appSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'pantrypick',
+  applicationCategory: 'LifestyleApplication',
+  operatingSystem: 'Any (web browser)',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description,
+};
+
+const timeOptions = [
+  { v: 0, label: 'Any time' },
+  { v: 15, label: '15 min or less' },
+  { v: 30, label: '30 min or less' },
+  { v: 45, label: '45 min or less' },
+  { v: 60, label: '1 hour or less' },
+];
+
+const diet = [
+  { key: 'vegetarian', label: 'Vegetarian' },
+  { key: 'vegan', label: 'Vegan' },
+  { key: 'gluten-free', label: 'Gluten-free' },
+  { key: 'dairy-free', label: 'Dairy-free' },
+];
+---
+<Base title={title} description={description}>
+  <a class="skip-link" href="#results">Skip to recipes</a>
+
+  <header class="masthead">
+    <div class="masthead__inner">
+      <span class="brand">
+        <span class="brand__mark" aria-hidden="true">pp</span>
+        pantry<em>pick</em>
+      </span>
+      <p class="masthead__tag">
+        Tell it what you have. It shows the everyday recipes you can actually cook
+        right now — ranked by how much is already in your kitchen.
+      </p>
+    </div>
+  </header>
+
+  <div class="scope" role="note">
+    <div class="wrap">
+      <strong>Honest scope:</strong> pantrypick cooks from a hand-picked library of
+      about <span class="num">150</span> real everyday recipes. It does not invent
+      recipes — which is exactly why it stays private and works offline.
+    </div>
+  </div>
+
+  <main class="wrap" id="main">
+    <div class="bench">
+      <!-- LEFT: the pantry -->
+      <aside class="pantry" aria-label="Your pantry and filters">
+        <section class="entry">
+          <label for="ingredient-input">What's in your kitchen?</label>
+          <div class="entry__field">
+            <input
+              type="text"
+              id="ingredient-input"
+              autocomplete="off"
+              autocapitalize="off"
+              spellcheck="false"
+              placeholder="e.g. chickpeas, spinach, eggs"
+              role="combobox"
+              aria-expanded="false"
+              aria-controls="autocomplete"
+              aria-autocomplete="list"
+            />
+            <button type="button" class="btn" id="add-btn">Add</button>
+          </div>
+          <div id="autocomplete" class="ac" role="listbox" aria-label="Ingredient suggestions" hidden></div>
+          <div id="entry-note" aria-live="polite" style="min-height:1.1rem;font-size:.82rem;color:var(--accent-dark);margin-top:.35rem"></div>
+
+          <div class="chips" id="chips" aria-live="polite" aria-label="Your ingredients"></div>
+          <button type="button" class="btn btn--ghost" id="clear-btn" style="margin-top:.7rem;padding:.35rem .7rem;font-size:.85rem">
+            Clear my ingredients
+          </button>
+        </section>
+
+        <section>
+          <p class="pantry__title">Staples — assumed present</p>
+          <div class="staples" id="staples-list"></div>
+        </section>
+
+        <section class="filters">
+          <p class="pantry__title">Filters</p>
+
+          <div class="toggles" role="group" aria-label="Dietary filters">
+            {diet.map((d) => (
+              <label class="toggle">
+                <input type="checkbox" data-filter={d.key} />
+                {d.label}
+              </label>
+            ))}
+          </div>
+
+          <div class="range-row">
+            <label for="filter-time">Max total time</label>
+            <select id="filter-time">
+              {timeOptions.map((o) => (
+                <option value={o.v}>{o.label}</option>
+              ))}
+            </select>
+          </div>
+
+          <div class="range-row">
+            <label for="filter-missing">
+              Hide recipes missing more than <span class="val" id="filter-missing-val">any</span>
+            </label>
+            <input type="range" id="filter-missing" min="0" max="10" step="1" value="10" />
+          </div>
+        </section>
+      </aside>
+
+      <!-- RIGHT: results -->
+      <section id="results" aria-label="Matching recipes">
+        <div class="results__head">
+          <h2 class="results__count" id="results-count" aria-live="polite">
+            <span class="num">150</span> recipes you can make
+          </h2>
+          <p class="results__sort">Ranked by how much you already have</p>
+        </div>
+
+        <div class="cards" id="cards"></div>
+
+        <div class="empty" id="empty" hidden>
+          <h3>No recipes match those filters</h3>
+          <p>Try removing a dietary filter, raising the time limit, or allowing a few missing ingredients.</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- About -->
+    <section class="section" id="about" aria-labelledby="about-h">
+      <h2 id="about-h">Fridge to recipe finder, done honestly</h2>
+      <p class="section__lead">
+        pantrypick answers one question well: <em>what can I cook with the ingredients I have?</em>
+        Type your ingredients, and it ranks recipes by coverage — the ones you can cook right now
+        come first, then the ones missing one item, then two. Every card tells you exactly which
+        ingredients you still need, so nothing goes to waste.
+      </p>
+      <p class="section__lead">
+        It is built to help you use up what is already in your kitchen without a login, an account,
+        or a connection. The whole recipe library lives inside this page and every match is worked
+        out on your own device.
+      </p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq" aria-labelledby="faq-h">
+      <h2 id="faq-h">Questions</h2>
+      <div class="faq">
+        {faqs.map((f) => (
+          <details>
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <div class="disclaimer-strip">
+    <div class="wrap">
+      <strong>A note on allergies:</strong> dietary and allergen tags are best-effort.
+      Always check the ingredients yourself before cooking for allergies or strict diets.
+    </div>
+  </div>
+
+  <footer class="site">
+    <div class="wrap">
+      <span>pantrypick — a hand-picked, offline recipe finder. Your pantry stays on your device.</span>
+      <span><span class="num">150</span> recipes · no login · nothing leaves your browser</span>
+    </div>
+  </footer>
+
+  <!-- Recipe detail -->
+  <dialog id="recipe-dialog" class="recipe-modal" aria-labelledby="modal-title">
+    <div class="modal__inner" id="modal-body"></div>
+  </dialog>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(appSchema)} />
+  <script>
+    import '../scripts/app.js';
+  </script>
+</Base>
