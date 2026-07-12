@@ -1,43 +1,33 @@
-# Astro Starter Kit: Minimal
+# pantrypick
+
+Type the ingredients you already have and see the everyday recipes you can cook right now — ranked by how much of each one you own.
+
+![pantrypick — a pantry of ingredients on the left, recipes ranked by coverage on the right](./preview.png)
+
+## Why it exists
+
+Most recipe sites start from the dish and make you shop. pantrypick starts from your kitchen. You list what you have, and it sorts a hand-picked library of real, everyday recipes so the ones you can make *right now* come first, then the ones missing a single ingredient, then two, and so on. Every card tells you exactly what you still need, so the goal is simple: use up what's already there and waste less.
+
+It is deliberately small and honest:
+
+- **150 real recipes**, hand-written across 28 cuisines with quantified ingredients and numbered steps. Nothing is generated on the fly.
+- **Fully offline and private.** The whole library ships inside the page, every match runs in your browser, and nothing is ever sent to a server. Your pantry is saved locally, not in an account. There is no login.
+- **Speaks your kitchen's dialect.** Scallion and green onion, coriander and cilantro, aubergine and eggplant, capsicum and bell pepper, courgette and zucchini all match the same thing.
+- **Staples assumed.** Salt, oil, flour, garlic and the like are treated as always-present, with a per-item toggle for when you're actually out.
+- **Filters that mean something.** Vegetarian, vegan, gluten-free and dairy-free tags are checked against every ingredient list at build time, plus max-time and max-missing controls.
+
+Built with [Astro](https://astro.build). No frameworks, no web fonts, no trackers — a single client-side island of vanilla JavaScript behind a strict Content-Security-Policy.
+
+## Quickstart
 
 ```sh
-npm create astro@latest -- --template minimal
+npm install     # install dependencies
+npm run dev      # local dev server at http://localhost:4321
+npm run build    # production build into ./dist/
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+`npm run build` first regenerates the recipe corpus from `scripts/`. That step canonicalizes ingredient names, flags staples, and **fails the build** if any dietary tag contradicts an ingredient (for example a "vegan" recipe that lists cheese), so the tags you filter by are trustworthy.
 
-## 🚀 Project Structure
+## Disclaimer
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+pantrypick is provided **as is, without warranty of any kind**, under the MIT License (see [`LICENSE`](./LICENSE)). Dietary and allergen tags are a best-effort convenience, not a guarantee — ingredient products vary and cross-contamination happens. **Always read the ingredients yourself before cooking for allergies or a strict diet.** You are responsible for checking food safety, and the authors are not liable for any outcome of using this software.

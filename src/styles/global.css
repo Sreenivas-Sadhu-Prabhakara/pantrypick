@@ -606,7 +606,15 @@ footer.site {
   color: var(--ink-faint);
   font-size: 0.85rem;
 }
-footer.site .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+footer.site .site__row { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+footer.site .site__legal {
+  margin: 0.9rem 0 0;
+  max-width: 78ch;
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+  border-top: 1px solid var(--rule);
+  padding-top: 0.8rem;
+}
 footer.site a { color: var(--ink-soft); }
 
 @media (prefers-reduced-motion: reduce) {

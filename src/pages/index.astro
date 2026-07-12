@@ -1,9 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
 
-const title = 'pantrypick — what can I cook with the ingredients I have?';
+// ~55 char title targeting the "recipes from ingredients I have" query.
+const title = 'What can I cook with the ingredients I have? — pantrypick';
+// ~150 char description with the primary phrases, no fluff.
 const description =
-  'Tell pantrypick what is in your kitchen and it shows the everyday recipes you can actually cook right now, ranked by how much you already have. Private, offline, no login. A hand-picked library of about 150 real recipes.';
+  'Type the ingredients you have and see the everyday recipes you can cook right now, ranked by how much you already own. Private, offline, no login.';
 
 // FAQPage structured data — mirrors the visible FAQ below.
 const faqs = [
@@ -43,13 +45,23 @@ const faqSchema = {
   })),
 };
 
+const canonical = 'https://sreenivas-sadhu-prabhakara.github.io/pantrypick/';
 const appSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
   name: 'pantrypick',
+  url: canonical,
   applicationCategory: 'LifestyleApplication',
   operatingSystem: 'Any (web browser)',
+  browserRequirements: 'Requires JavaScript. Runs fully offline in the browser.',
+  image: canonical + 'og.png',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  featureList: [
+    'Find recipes from the ingredients you already have',
+    'Ranked by how much of each recipe you can cook now',
+    'Works offline with no account or login',
+    'Filter by vegetarian, vegan, gluten-free and dairy-free',
+  ],
   description,
 };
 
@@ -214,8 +226,15 @@ const diet = [
 
   <footer class="site">
     <div class="wrap">
-      <span>pantrypick — a hand-picked, offline recipe finder. Your pantry stays on your device.</span>
-      <span><span class="num">150</span> recipes · no login · nothing leaves your browser</span>
+      <div class="site__row">
+        <span>pantrypick — a hand-picked, offline recipe finder. Your pantry stays on your device.</span>
+        <span><span class="num">150</span> recipes · no login · nothing leaves your browser</span>
+      </div>
+      <p class="site__legal">
+        Free and open source under the MIT License. Provided as is, without warranty of any
+        kind — you are responsible for checking ingredients and food safety before cooking.
+        pantrypick is not liable for any outcome of using it.
+      </p>
     </div>
   </footer>
 

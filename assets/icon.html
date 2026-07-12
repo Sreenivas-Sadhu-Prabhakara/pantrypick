@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<style>
+  :root {
+    --paper: #fbf7ef;
+    --card: #fffdf8;
+    --ink: #26211b;
+    --rule: #e4dac6;
+    --rule-strong: #d3c5aa;
+    --accent: #c24a2e;
+    --have: #1f7a5a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 512px; height: 512px; overflow: hidden; }
+  .bg {
+    width: 512px; height: 512px;
+    display: grid; place-items: center;
+    /* warm paprika field so the light card pops — safe for maskable (fills to edge) */
+    background: radial-gradient(circle at 50% 42%, #d1583a, #b8401f 78%);
+  }
+  /* the index card — tilted, hole-punched, ruled: the app's signature at glyph scale */
+  .card {
+    position: relative;
+    width: 300px; height: 300px;
+    background: var(--card);
+    border: 8px solid var(--ink);
+    border-radius: 30px;
+    transform: rotate(-7deg);
+    box-shadow: 0 22px 44px rgba(38,33,27,.34);
+  }
+  /* punched hole top-left */
+  .card::before {
+    content: ""; position: absolute; top: 34px; left: 34px;
+    width: 34px; height: 34px; border-radius: 50%;
+    background: var(--paper); border: 7px solid var(--ink);
+  }
+  /* header rule */
+  .rule {
+    position: absolute; left: 30px; right: 30px; top: 108px;
+    height: 8px; border-radius: 4px; background: var(--rule-strong);
+  }
+  /* coverage pips = the core idea (what you have) */
+  .pips {
+    position: absolute; left: 40px; bottom: 46px;
+    display: flex; gap: 15px;
+  }
+  .pip { width: 44px; height: 44px; border-radius: 9px; }
+  .pip--have { background: var(--have); }
+  .pip--need { background: #fff; border: 7px solid var(--accent); }
+</style>
+</head>
+<body>
+  <div class="bg">
+    <div class="card">
+      <div class="rule"></div>
+      <div class="pips">
+        <span class="pip pip--have"></span>
+        <span class="pip pip--have"></span>
+        <span class="pip pip--need"></span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
